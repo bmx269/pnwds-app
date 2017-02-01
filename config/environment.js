@@ -5,6 +5,8 @@ module.exports = function(environment) {
     modulePrefix: 'pnwds-app',
     environment: environment,
     rootURL: '/',
+    host: 'https://pnwds-api.smallrobot.co', //drupal
+    namespace: 'jsonapi',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
