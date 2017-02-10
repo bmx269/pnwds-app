@@ -14,7 +14,7 @@ Router.map(function() {
   });
   this.route('stats', function() {
     this.route('sessions', function() {
-      this.route('session' {path: 'session/:id'}, function() {
+      this.route('session', {path: ':id'}, function() {
         this.route('attendies');
         this.route('comments');
       });
