@@ -7,6 +7,26 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('sessions', function() {
+  });
+  this.route('venue', function() {
+    this.route('map');
+  });
+  this.route('stats', function() {
+    this.route('sessions', function() {
+      this.route('session' {path: 'session/:id'}, function() {
+        this.route('attendies');
+        this.route('comments');
+      });
+    });
+  });
+  this.route('tracks', function() {
+    this.route('track', {path: ':id'});
+  });
+  this.route('dates', function() {
+    this.route('date', {path: ':id'});
+  });
+  this.route('404');
 });
 
 export default Router;
