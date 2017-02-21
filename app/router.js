@@ -7,18 +7,14 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('sessions', function() {
+  this.route('session', {path: ':id'}, function() {
+    this.route('attendies');
+    this.route('comments');
   });
   this.route('venue', function() {
     this.route('map');
   });
   this.route('stats', function() {
-    this.route('sessions', function() {
-      this.route('session', {path: ':id'}, function() {
-        this.route('attendies');
-        this.route('comments');
-      });
-    });
   });
   this.route('tracks', function() {
     this.route('track', {path: ':id'});
