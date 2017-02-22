@@ -1,2 +1,21 @@
 <h3>The Sessions</h3>
-{{yield}}
+  {{#each models.dates as |date|}}
+    <div>
+      <h2>{{moment-format date.fieldDate.value 'LT' timeZone='America/Los_Angeles'}} to {{moment-format date.fieldDate.end_value 'LT' timeZone='America/Los_Angeles'}}<br /><br /></h2>
+      {{date.fieldSession.length}}
+        {{!#if sessions}}
+        <div class="well">
+          {{#each date.fieldSession as |session|}}
+            <div>
+              <h3>{{session.title}}</h3>
+              <b>{{session.fieldSpeaker}}</b> 
+              {{session.fieldTrack}} 
+              {{session.fieldSessionRoom}}
+            </div>
+          {{/each}}
+        </div>
+        {{!else}}
+          <span class="loading">Loading...</span>
+        {{!/if}}
+    </div>
+  {{/each}}

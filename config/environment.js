@@ -8,6 +8,13 @@ module.exports = function(environment) {
     host: 'https://pnwds-api.smallrobot.co', //drupal
     namespace: 'jsonapi',
     locationType: 'auto',
+    moment: {
+      // Options:
+      // 'all' - all years, all timezones
+      // '2010-2020' - 2010-2020, all timezones
+      // 'none' - no data, just timezone API
+      includeTimezone: 'all'
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
