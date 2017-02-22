@@ -29,6 +29,10 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+    drupalEntityModels: {
+      "track": { entity: 'taxonomy_term', bundle: 'track', fields: ['name'] },
+      "experience-level": { entity: 'taxonomy_term', bundle: 'experience_level', fields: ['name'] },
     }
   };
 

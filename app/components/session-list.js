@@ -1,6 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  sortedSessions: Ember.computed.sort('sessions', 'sortDefinition'),
-  sortDefinition: ['fieldDate'],
+  sortedDates: Ember.computed.sort('dates', 'sortDefinition'),
+  sortBy: 'fieldDate.value', // default sort by date
+  sortDefinition: Ember.computed('sortBy', function() {
+  return [ this.get('sortBy') ];
+}),
 });

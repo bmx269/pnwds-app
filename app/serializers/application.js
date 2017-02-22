@@ -1,11 +1,2 @@
-import Ember from 'ember';
-import DS from 'ember-data';
-
-export default DS.JSONAPISerializer.extend({
-  modelNameFromPayloadKey(key) {
-    return Ember.String.dasherize(key);
-  },
-  keyForAttribute(attr) {
-    return Ember.String.underscore(attr);
-  }
-});
+import DrupalJSONAPISerializer from 'ember-data-drupal/serializer';
+export default DrupalJSONAPISerializer.extend();

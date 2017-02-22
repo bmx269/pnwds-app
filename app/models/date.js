@@ -8,5 +8,5 @@ export default DS.Model.extend({
   status: DS.attr(),
   changed: DS.attr(),
   fieldDate: DS.attr(),
-  fieldSessions: DS.hasMany('node--session', {async: true})
+  fieldSessions: DS.hasMany('session', {inverse: 'date'})
 });
