@@ -8,5 +8,5 @@ export default DS.Model.extend({
   status: DS.attr(),
   changed: DS.attr(),
   body: DS.attr(),
-  fieldSession: DS.belongsTo('node--session'),
+  fieldSession: DS.belongsTo('session'),
 });
