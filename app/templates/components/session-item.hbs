@@ -1,10 +1,26 @@
-<div class="session {{session.fieldTrack.fieldClass}}">
-  <div class="well well-sm">
-    <div class="room">{{session.fieldRoom.title}} {{session.fieldRoom.fieldRoomNumber}}</div>
-      <h4>{{session.title}}</h4>
-      <b>{{session.fieldSpeaker}}</b>
-      
-      <div class="track {{session.fieldTrack.fieldClass}}">{{session.fieldTrack.name}}</div>
-      <div class="level">{{session.fieldLevel.name}}</div>
-  </div>
+<div class="session  {{session.fieldTrack.fieldClass}}">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="row">
+        <div class="track col-xs-6 {{session.fieldTrack.fieldClass}}">{{session.fieldTrack.name}}</div>
+        <div class="room col-xs-6">
+            <b>{{session.fieldRoom.title}}</b> {{session.fieldRoom.fieldRoomNumber}}
+          </div>
+      </div>
+      <h3 class="panel-title">{{session.title}}</h3>
+      </div>
+      <div class="panel-body">
+        
+        <div class="info col-xs-8 col-md-7">
+          <b>{{session.fieldSpeaker}}</b>
+          <div class="level  {{session.fieldLevel.name}}">
+            {{session.fieldLevel.name}}
+        </div>
+          
+        </div>
+        <div class="col-xs-4 col-md-5 actions">
+          {{session-actions}}
+        </div>
+      </div>
+    </div>
 </div>  

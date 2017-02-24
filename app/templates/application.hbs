@@ -11,18 +11,17 @@
     {{#navbar.content}}
         {{#navbar.nav as |nav|}}
             {{#nav.item}}{{#link-to "index"}}Home{{/link-to}}{{/nav.item}}
-            {{#nav.item}}{{#link-to "tracks"}}Tracks{{/link-to}}{{/nav.item}}
             {{#nav.item}}{{#link-to "venue"}}The Venue{{/link-to}}{{/nav.item}}
         {{/navbar.nav}}
     {{/navbar.content}}
 {{/bs-navbar}}
 <div class="content-wrapper">
-  <div class="container">
+  <div class="container-fluid">
     {{outlet}}
   </div>
 </div>
 <div class="footer-wrapper">
-  <div class="container">
+  <div class="container-fluid">
 
   </div>
 </div>

@@ -12,27 +12,28 @@ $orange: #F5A623;
 
 .session {
   @include make-sm-column(6);
-  @include make-md-column(3);    
+  @include make-lg-column(3); 
+
     
-  &.devops .well {
+  &.devops .panel-heading {
     background: lighten($orange, 40%);
     border-color: $orange;
-    color: darken($orange, 10%);
+    color: darken($orange, 20%);
   }
 
-  &.business .well {
+  &.business .panel-heading {
     background: lighten($red, 30%);
     border-color: $red;
     color: darken($red, 10%);
   }
   
-  &.code .well {
+  &.code .panel-heading {
     background: lighten($blue, 50%);
     border-color: $blue;
     color: darken($blue, 10%);
   }
 
-  &.design .well {
+  &.design .panel-heading {
     background: lighten($purple, 40%);
     border-color: $purple;
     color: darken($purple, 10%);
@@ -42,9 +43,9 @@ $orange: #F5A623;
     @include make-sm-column(12);
     @include make-md-column(12);
     
-    .well {
+    .panel-heading {
       background: lighten($green, 50%);
-      border-color: $green; 
+      border: 0 solid $green; 
       color: darken($green, 10%);
     }
   }
@@ -56,28 +57,95 @@ $orange: #F5A623;
     }
 
     &.devops {
-
+      &:before {
+        content: $fa-var-code-fork;
+      }
     }
 
     &.business {
-
+      &:before {
+        content: $fa-var-coffee;
+      }
     }
     
     &.code {
       &:before {
-        content: $fa-var-clock-o;
+        content: $fa-var-code;
       }
     }
 
     &.design {
 
       &:before {
-        content: $fa-var-clock-o;
+        content: $fa-var-photo;
       }
     }
     &.all {
       display: none;
     }
+  }
+  .panel-heading {
+    @media (min-width: $screen-sm-min) {
+      min-height: 115px;
+    }
+    @media (min-width: $screen-md-min) {
+      min-height: 100px;
+    }
+    @media (min-width: $screen-lg-min) {
+      min-height: 0px;
+    }
+  }
+
+  .panel-body {
+    padding: 15px 0px;
+    font-size: 14px;
+  }
+
+  &.all {
+    .panel-heading {
+      @media (min-width: $screen-sm-min) {
+        min-height: 0;
+      }
+      @media (min-width: $screen-lg-min) {
+        min-height: 0;
+      }
+    }
+    .panel-body {
+      display: none;
+    }
+
+    .track,
+    .room,
+    .level {
+      display: none;
+    }
+  }
+
+  
+  .level {
+    font-size: 90%;
+    padding-bottom: 5px;
+  }
+
+  .track {
+    font-size: 90%;
+    padding-bottom: 5px;
+  }
+
+  .room {
+    text-transform: uppercase;
+    text-align: right;
+    font-size: 85%;
+    padding-bottom: 5px;
+  }
+
+  .actions {
+    text-align: right;
+    font-size: 25px;
+  }
+
+  &.all .actions {
+    display: none;
   }
 }
 
