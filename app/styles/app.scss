@@ -1,2 +1,83 @@
-
 @import "ember-bootstrap/bootstrap";
+@import "font-awesome";
+
+// Vars
+
+$green: #00BF90;
+$blue: #0077C0;
+$purple: #9013FE;
+$red: #F95E56;
+$orange: #F5A623;
+
+
+.session {
+  @include make-sm-column(6);
+  @include make-md-column(3);    
+    
+  &.devops .well {
+    background: lighten($orange, 40%);
+    border-color: $orange;
+    color: darken($orange, 10%);
+  }
+
+  &.business .well {
+    background: lighten($red, 30%);
+    border-color: $red;
+    color: darken($red, 10%);
+  }
+  
+  &.code .well {
+    background: lighten($blue, 50%);
+    border-color: $blue;
+    color: darken($blue, 10%);
+  }
+
+  &.design .well {
+    background: lighten($purple, 40%);
+    border-color: $purple;
+    color: darken($purple, 10%);
+  }
+
+  &.all {
+    @include make-sm-column(12);
+    @include make-md-column(12);
+    
+    .well {
+      background: lighten($green, 50%);
+      border-color: $green; 
+      color: darken($green, 10%);
+    }
+  }
+
+  .track {
+    &:before {
+      @include fa-icon();
+      padding-right: 5px;
+    }
+
+    &.devops {
+
+    }
+
+    &.business {
+
+    }
+    
+    &.code {
+      &:before {
+        content: $fa-var-clock-o;
+      }
+    }
+
+    &.design {
+
+      &:before {
+        content: $fa-var-clock-o;
+      }
+    }
+    &.all {
+      display: none;
+    }
+  }
+}
+

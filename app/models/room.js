@@ -6,4 +6,5 @@ export default DS.Model.extend({
   title: DS.attr('string'),
   status: DS.attr(),
   fieldRoomNumber: DS.attr('string'),
+  session: DS.hasMany('session', { inverse: 'fieldRoom' }),
 });

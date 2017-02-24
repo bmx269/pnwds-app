@@ -31,8 +31,17 @@ module.exports = function(environment) {
       // when it is created
     },
     drupalEntityModels: {
-      "track": { entity: 'taxonomy_term', bundle: 'track', fields: ['name'] },
-      "experience-level": { entity: 'taxonomy_term', bundle: 'experience_level', fields: ['name'] },
+      "track": { entity: 'taxonomy_term', bundle: 'track'},
+      "level": { entity: 'taxonomy_term', bundle: 'level' },
+    },
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'script-src': "'self' 'unsafe-inline'",
+      'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com",
+      'font-src': "'self' fonts.gstatic.com",
+      'connect-src': "'self'",
+      'img-src': "'self' data:",
+      'media-src': "'self'"
     }
   };
 

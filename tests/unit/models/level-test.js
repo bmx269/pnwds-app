@@ -1,6 +1,6 @@
 import { moduleForModel, test } from 'ember-qunit';
 
-moduleForModel('taxonomy-term--experience-level', 'Unit | Model | taxonomy term  experience level', {
+moduleForModel('level', 'Unit | Model | taxonomy term  experience level', {
   // Specify the other units that are required for this test.
   needs: []
 });

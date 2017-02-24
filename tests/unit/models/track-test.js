@@ -1,6 +1,6 @@
 import { moduleForModel, test } from 'ember-qunit';
 
-moduleForModel('taxonomy-term--track', 'Unit | Model | taxonomy term  track', {
+moduleForModel('track', 'Unit | Model | taxonomy term  track', {
   // Specify the other units that are required for this test.
   needs: []
 });
