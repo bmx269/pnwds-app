@@ -13,17 +13,6 @@
 			{{#nav.item}}
         {{#link-to "index"}}Home{{/link-to}}
       {{/nav.item}}
-
-			{{#if session.isAuthenticated}}
-				{{#nav.item}}
-					<a href="" {{ action "logout" }}>Logout</a>
-				{{/nav.item}}
-			{{else}}
-				{{#nav.item}}
-					<a href="" {{ action "login" }}>Login</a>
-				{{/nav.item}}
-			{{/if}}
-      
 		{{/navbar.nav}}
 	{{/navbar.content}}
 {{/bs-navbar}}

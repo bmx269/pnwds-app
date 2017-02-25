@@ -30,14 +30,6 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
-    'ember-simple-auth': {
-      authenticationRoute: 'login', 
-      auth0: {
-        clientID: '1234',
-        domain: 'my-company.auth0.com',
-        logoutURL: '/logout',
-      }
-    },
     drupalEntityModels: {
       "track": { entity: 'taxonomy_term', bundle: 'track'},
       "level": { entity: 'taxonomy_term', bundle: 'level' },
@@ -50,7 +42,7 @@ module.exports = function(environment) {
       'style-src': "'self' 'unsafe-inline'",
       'script-src': "'self' 'unsafe-eval' https://*.auth0.com",
       'img-src': '*.gravatar.com *.wp.com data:',
-      'connect-src': "'self' http://localhost:* https://your-app-domain.auth0.com"
+      'connect-src': "'self' http://localhost:* https://servicebay.auth0.com"
     },
   };
 
