@@ -9,7 +9,7 @@
     {{#if date.fieldSessions}}
       <div class="row">
         {{#each date.fieldSessions as |session|}}
-          {{session-item session=session}}
+          {{session-item session=session action="like"}}
         {{/each}}
       </div>
     {{else}}

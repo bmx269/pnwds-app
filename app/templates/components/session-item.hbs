@@ -1,32 +1,36 @@
-<div class="session  {{session.fieldTrack.fieldClass}}">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      {{#if session}}
-        <div class="row">
-          <div class="track col-xs-6 {{session.fieldTrack.fieldClass}}">{{session.fieldTrack.name}}</div>
-          <div class="room col-xs-6">
-              <b>{{session.fieldRoom.title}}</b> {{session.fieldRoom.fieldRoomNumber}}
-            </div>
+<div class="session-item session {{session.fieldTrack.fieldClass}}">
+  {{#memory-scroll key=(concat "session/" session.id) }}
+    <div class="panel panel-default" data-item-id={{session.id}}>
+      <div class="panel-heading" >
+        {{#if session}}
+          <div class="row">
+            <div class="track col-xs-6 {{session.fieldTrack.fieldClass}}">
+              {{session.fieldTrack.name}}</div>
+            <div class="room col-xs-6">
+                <b>{{session.fieldRoom.title}}</b> 
+                {{session.fieldRoom.fieldRoomNumber}}
+              </div>
+          </div>
+          <h3 class="panel-title">{{#link-to 'session' session.id}}{{session.title}}{{/link-to}}</h3>
+        {{else}}
+        {{/if}}
         </div>
-        <h3 class="panel-title">{{session.title}}</h3>
-      {{else}}
-      {{/if}}
-      </div>
+      
       <div class="panel-body">
         {{#if session}}
           <div class="info col-xs-8 col-md-7">
             <b>{{session.fieldSpeaker}}</b>
             <div class="level  {{session.fieldLevel.name}}">
               {{session.fieldLevel.name}}
-          </div>
-            
+            </div>
           </div>
           <div class="col-xs-4 col-md-5 actions">
-            {{session-actions}}
+            {{session-actions session=session}}
           </div>
         {{else}}
           {{ember-spinner}}
         {{/if}}
       </div>
     </div>
+  {{/memory-scroll}}
 </div>  

@@ -7,7 +7,7 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('session', {path: ':id'}, function() {
+  this.route('session', {path: 'session/:id'}, function() {
     this.route('attendies');
     this.route('comments');
   });
@@ -23,6 +23,8 @@ Router.map(function() {
     this.route('date', {path: ':id'});
   });
   this.route('404');
+  this.route('login');
+  this.route('loading');
 });
 
 export default Router;

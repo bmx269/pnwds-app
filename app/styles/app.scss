@@ -9,11 +9,16 @@ $purple: #9013FE;
 $red: #F95E56;
 $orange: #F5A623;
 
-
-.session {
+.session-item {
   @include make-sm-column(6);
   @include make-lg-column(3); 
 
+  &.all {
+    @include make-sm-column(12);
+    @include make-md-column(12);
+  }
+}
+.session {
     
   &.devops .panel-heading {
     background: lighten($orange, 40%);
@@ -39,15 +44,10 @@ $orange: #F5A623;
     color: darken($purple, 10%);
   }
 
-  &.all {
-    @include make-sm-column(12);
-    @include make-md-column(12);
-    
-    .panel-heading {
-      background: lighten($green, 50%);
-      border: 0 solid $green; 
-      color: darken($green, 10%);
-    }
+  &.all .panel-heading {
+    background: lighten($green, 50%);
+    border: 0 solid $green; 
+    color: darken($green, 10%);
   }
 
   .track {
@@ -142,10 +142,28 @@ $orange: #F5A623;
   .actions {
     text-align: right;
     font-size: 25px;
+
+    .action {
+      cursor: pointer;
+    
+      &:hover,
+      &:focus,
+      &:active {
+        color: gray;
+      }
+
+      &.liked {
+        color: $green;
+      }
+    }
   }
 
   &.all .actions {
     display: none;
+  }
+
+  .body {
+    padding-top: 20px;
   }
 }
 

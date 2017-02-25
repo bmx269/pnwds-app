@@ -1,1 +1,36 @@
-{{outlet}}
+<div class="session {{model.fieldTrack.fieldClass}}">
+  <div class="panel panel-default" data-item-id={{model.id}}>
+    <div class="panel-heading">
+      {{#if model}}
+        <div class="row">
+          <div class="track col-xs-6 {{model.fieldTrack.fieldClass}}">
+            {{model.fieldTrack.name}}</div>
+          <div class="room col-xs-6">
+              <b>{{model.fieldRoom.title}}</b> 
+              {{model.fieldRoom.fieldRoomNumber}}
+            </div>
+        </div>
+        <h3 class="panel-title">{{model.title}}</h3>
+      {{else}}
+      {{/if}}
+      </div>
+      <div class="panel-body">
+        {{#if model}}
+          <div class="info col-xs-8 col-md-10">
+            <b>{{model.fieldSpeaker}}</b>
+            <div class="level  {{model.fieldLevel.name}}">
+              {{modelfieldLevel.name}}
+            </div>
+          </div>
+          <div class="col-xs-4 col-md-2 actions">
+            {{session-actions session=model}}
+          </div>
+          <div class="col-xs-12 body">
+            {{{model.body.value}}}
+          </div>
+        {{else}}
+          {{ember-spinner}}
+        {{/if}}
+      </div>
+    </div>
+</div> 
