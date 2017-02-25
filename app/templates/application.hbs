@@ -1,22 +1,35 @@
 {{#bs-navbar type=(if inverse 'inverse') fluid=fluid as |navbar|}}
-    <div class="navbar-header">
-        {{#navbar.toggle}}
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        {{/navbar.toggle}}
-       {{#link-to "index" class="navbar-brand"}}P<span class="hidden-xs hidden-sm">ACIFIC </span>N<span class="hidden-xs hidden-sm">ORTH</span>W<span class="hidden-xs hidden-sm">EST </span>D<span class="hidden-xs hidden-sm">RUPAL </span>S<span class="hidden-xs hidden-sm">UMMIT</span>{{/link-to}}
-    </div>
-    {{#navbar.content}}
-        {{#navbar.nav as |nav|}}
-            {{#nav.item}}{{#link-to "index"}}Home{{/link-to}}{{/nav.item}}
-        {{/navbar.nav}}
-    {{/navbar.content}}
+	<div class="navbar-header">
+		{{#navbar.toggle}}
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		{{/navbar.toggle}}
+	   {{#link-to "index" class="navbar-brand"}}P<span class="hidden-xs hidden-sm">ACIFIC </span>N<span class="hidden-xs hidden-sm">ORTH</span>W<span class="hidden-xs hidden-sm">EST </span>D<span class="hidden-xs hidden-sm">RUPAL </span>S<span class="hidden-xs hidden-sm">UMMIT</span>{{/link-to}}
+	</div>
+	{{#navbar.content}}
+		{{#navbar.nav as |nav|}}
+			{{#nav.item}}
+        {{#link-to "index"}}Home{{/link-to}}
+      {{/nav.item}}
+
+			{{#if session.isAuthenticated}}
+				{{#nav.item}}
+					<a href="" {{ action "logout" }}>Logout</a>
+				{{/nav.item}}
+			{{else}}
+				{{#nav.item}}
+					<a href="" {{ action "login" }}>Login</a>
+				{{/nav.item}}
+			{{/if}}
+      
+		{{/navbar.nav}}
+	{{/navbar.content}}
 {{/bs-navbar}}
 <div class="content-wrapper">
   <div class="container">
-    {{liquid-outlet}}
+	{{liquid-outlet}}
   </div>
 </div>
 <div class="footer-wrapper">

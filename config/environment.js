@@ -30,33 +30,28 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
+    'ember-simple-auth': {
+      authenticationRoute: 'login', 
+      auth0: {
+        clientID: '1234',
+        domain: 'my-company.auth0.com',
+        logoutURL: '/logout',
+      }
+    },
     drupalEntityModels: {
       "track": { entity: 'taxonomy_term', bundle: 'track'},
       "level": { entity: 'taxonomy_term', bundle: 'level' },
     },
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'script-src': "'self' 'unsafe-inline'",
-      'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com",
-      'font-src': "'self' fonts.gstatic.com",
-      'connect-src': "'self'",
       'img-src': "'self' data:",
-      'media-src': "'self'"
+      'media-src': "'self'",
+      'font-src': "'self' data: https://*.auth0.com",
+      'style-src': "'self' 'unsafe-inline'",
+      'script-src': "'self' 'unsafe-eval' https://*.auth0.com",
+      'img-src': '*.gravatar.com *.wp.com data:',
+      'connect-src': "'self' http://localhost:* https://your-app-domain.auth0.com"
     },
-  };
-
-  ENV['ember-simple-auth-token'] = {
-    serverTokenEndpoint: 'https://pnwds-api.smallrobot.co/jwt/token/',
-    identificationField: 'username',
-    passwordField: 'password',
-    tokenPropertyName: 'token',
-    authorizationPrefix: 'Bearer ',
-    authorizationHeaderName: 'Authorization',
-    headers: {},
-    refreshAccessTokens: true,
-    serverTokenRefreshEndpoint: 'https://pnwds-api.smallrobot.co/jwt/token/',
-    tokenExpireName: 'exp',
-    refreshLeeway: 0
   };
 
   if (environment === 'development') {
