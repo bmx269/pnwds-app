@@ -5,7 +5,7 @@ export default Ember.Component.extend({
   anonymousLikes: storageFor('likes'),
 
   isLiked: Ember.computed('anonymousLikes.length', function() {
-    return this.get('anonymousLikes').includes(this.get('id'));
+    return this.get('anonymousLikes').includes(this.get('session.id'));
   }),
 
   actions: {

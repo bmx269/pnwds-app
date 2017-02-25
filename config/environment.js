@@ -42,7 +42,21 @@ module.exports = function(environment) {
       'connect-src': "'self'",
       'img-src': "'self' data:",
       'media-src': "'self'"
-    }
+    },
+  };
+
+  ENV['ember-simple-auth-token'] = {
+    serverTokenEndpoint: 'https://pnwds-api.smallrobot.co/jwt/token/',
+    identificationField: 'username',
+    passwordField: 'password',
+    tokenPropertyName: 'token',
+    authorizationPrefix: 'Bearer ',
+    authorizationHeaderName: 'Authorization',
+    headers: {},
+    refreshAccessTokens: true,
+    serverTokenRefreshEndpoint: 'https://pnwds-api.smallrobot.co/jwt/token/',
+    tokenExpireName: 'exp',
+    refreshLeeway: 0
   };
 
   if (environment === 'development') {
