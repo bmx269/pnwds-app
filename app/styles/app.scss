@@ -145,13 +145,10 @@ $orange: #F5A623;
 
     .action {
       cursor: pointer;
+      height: 48px;
+      width: 48px;
+      display: block;
     
-      &:hover,
-      &:focus,
-      &:active {
-        color: gray;
-      }
-
       &.liked {
         color: $green;
       }
